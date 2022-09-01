@@ -58,7 +58,8 @@ export default function App() {
       )
       .then(
         rr => {
-          var rand = Math.floor(Math.random() * 20);
+          const lengthData = rr.near_earth_objects.length
+          const rand = Math.floor(Math.random() * lengthData);
           setGet(false)
           setAsteroid(prev => [...prev, {
             nama: rr.near_earth_objects[rand].name,
